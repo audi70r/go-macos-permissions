@@ -9,7 +9,4 @@ bool checkAccessibilityPermission(void) {
 void requestAccessibilityPermission(void) {
     NSDictionary *options = @{(__bridge id)kAXTrustedCheckOptionPrompt: @YES};
     AXIsProcessTrustedWithOptions((__bridge CFDictionaryRef)options);
-    
-    NSString *urlString = @"x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility";
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:urlString]];
 }

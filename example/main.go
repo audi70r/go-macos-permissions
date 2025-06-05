@@ -8,9 +8,10 @@ import (
 )
 
 func main() {
-	fmt.Println("macOS Permissions Demo")
-	fmt.Println("======================")
+	demoAccessibilityPermission()
+}
 
+func demoCameraPermission() {
 	fmt.Println("\n1. Camera Permission:")
 	fmt.Printf("   Current status: %v\n", permissions.CheckCamera())
 	fmt.Println("   Requesting permission...")
@@ -19,7 +20,9 @@ func main() {
 	} else {
 		fmt.Printf("   New status: %v\n", permissions.CheckCamera())
 	}
+}
 
+func demoMicrophonePermission() {
 	fmt.Println("\n2. Microphone Permission:")
 	fmt.Printf("   Current status: %v\n", permissions.CheckMicrophone())
 	fmt.Println("   Requesting permission...")
@@ -28,20 +31,22 @@ func main() {
 	} else {
 		fmt.Printf("   New status: %v\n", permissions.CheckMicrophone())
 	}
+}
 
+func demoAccessibilityPermission() {
 	fmt.Println("\n3. Accessibility Permission:")
 	fmt.Printf("   Current status: %v\n", permissions.CheckAccessibility())
 	fmt.Println("   Opening System Preferences...")
 	if err := permissions.RequestAccessibility(); err != nil {
 		log.Printf("   Failed to open accessibility settings: %v\n", err)
 	}
+}
 
+func demoScreenRecordingPermission() {
 	fmt.Println("\n4. Screen Recording Permission:")
 	fmt.Printf("   Current status: %v\n", permissions.CheckScreenRecording())
 	fmt.Println("   Opening System Preferences...")
 	if err := permissions.RequestScreenRecording(); err != nil {
 		log.Printf("   Failed to open screen recording settings: %v\n", err)
 	}
-
-	fmt.Println("\nDemo completed!")
 }

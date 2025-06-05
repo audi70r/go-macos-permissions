@@ -1,5 +1,7 @@
 # go-macos-permissions
 
+<img src="go-macos-permissions.png" alt="go-macos-permissions logo" width="33%">
+
 A Go library for checking and requesting macOS system permissions through Objective-C/C bindings.
 
 ## Features
